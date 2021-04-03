@@ -72,7 +72,7 @@ int main(void)
 			if(report==1)//发送数据给上位机
 			{				
 //				usart1_report_pid(u16 rol_p,u16 rol_i,u16 rol_d,u16 pit_p,u16 pit_i,u16 pit_d,u16 yaw_p,u16 yaw_i,u16 yaw_d);
-				usart1_report_rc(Rc.THROTTLE,Rc.YAW,Rc.ROLL,Rc.PITCH,Rc.AUX1,Rc.AUX2,Rc.AUX3,Rc.AUX4,0,(int)((Rc.mot1-1000)/10),(int)((Rc.mot2-1000)/10),(int)((Rc.mot3-1000)/10),(int)((Rc.mot4-1000)/10),0);
+//				usart1_report_rc(Rc.THROTTLE,Rc.YAW,Rc.ROLL,Rc.PITCH,Rc.AUX1,Rc.AUX2,Rc.AUX3,Rc.AUX4,0,(int)((Rc.mot1-1000)/10),(int)((Rc.mot2-1000)/10),(int)((Rc.mot3-1000)/10),(int)((Rc.mot4-1000)/10),0);
 			}
 			
 		}
