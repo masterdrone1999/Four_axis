@@ -124,26 +124,3 @@ void PPM_DataArrange(uint16_t *data)
 }
 
 
-
-
-///**  
-//  *  功能：数据整理函数，将接收到的PPM信号整理为ch1.2.3...的形式
-//  *  入口参数：
-//  *  返回值：
-//  */
-//extern uint8_t data_num[8]={4,0,5,1,6,2,7,3};
-//extern uint16_t PPM_Arranged_Data[8]={0};
-//void Data_Arrange(uint16_t *data)
-//{
-//	int i;
-//	for(i=0;i<8;i++)
-//	{
-//		PPM_Arranged_Data[i]=data[data_num[i]];
-//	}
-//}
-
-//void PPM_output(void)
-//{
-//	Data_Arrange(PPM_Databuf);
-//}
-

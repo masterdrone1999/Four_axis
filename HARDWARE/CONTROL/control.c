@@ -155,10 +155,7 @@ void Control_Gyro(struct _SI_float *gyro,struct _Rc *rc,uint8_t Lock)
 	gyro_roll.output  = gyro_roll.kp *control_gyro.roll  + gyro_roll.ki *gyro_roll.integral  + gyro_roll.kd *(control_gyro.roll -last_gyro.roll );
 	gyro_pitch.output = gyro_pitch.kp*control_gyro.pitch + gyro_pitch.ki*gyro_pitch.integral + gyro_pitch.kd*(control_gyro.pitch-last_gyro.pitch);
 	gyro_yaw.output   = gyro_yaw.kp  *control_gyro.yaw   + gyro_yaw.ki  *gyro_yaw.integral   + gyro_yaw.kd  *(control_gyro.yaw  -last_gyro.yaw  );
-//	printf("kp:\r\n");
-//	printf("%f,%f,%f\r\n",gyro_roll.kp*control_gyro.roll,gyro_pitch.kp*control_gyro.pitch,gyro_yaw.kp*control_gyro.yaw);
-//	printf("output:\r\n");
-//	printf("%f,%f,%f\r\n",gyro_pitch.output,gyro_roll.output,gyro_yaw.output);
+
 //////////////////////////////////////////////////////////////////
 	last_gyro.roll =control_gyro.roll;
 	last_gyro.pitch=control_gyro.pitch;
@@ -166,17 +163,12 @@ void Control_Gyro(struct _SI_float *gyro,struct _Rc *rc,uint8_t Lock)
 //////////////////////////////////////////////////////////////////
 	if(Lock==0)
 	{
-//		Rc.mot1 = rc->THROTTLE - 1050 + gyro_pitch.output + gyro_roll.output - gyro_yaw.output;
-//		Rc.mot2 = rc->THROTTLE - 1050 + gyro_pitch.output - gyro_roll.output + gyro_yaw.output;
-//		Rc.mot3 = rc->THROTTLE - 1050 - gyro_pitch.output + gyro_roll.output + gyro_yaw.output;
-//		Rc.mot4 = rc->THROTTLE - 1050 - gyro_pitch.output - gyro_roll.output - gyro_yaw.output;
+
 				
 		Rc.mot1 = rc->THROTTLE + (int)(gyro_pitch.output-1500) + (int)(gyro_roll.output-1500) - (int)(gyro_yaw.output-1500);
 		Rc.mot2 = rc->THROTTLE + (int)(gyro_pitch.output-1500) - (int)(gyro_roll.output-1500) + (int)(gyro_yaw.output-1500);
 		Rc.mot3 = rc->THROTTLE - (int)(gyro_pitch.output-1500) - (int)(gyro_roll.output-1500) - (int)(gyro_yaw.output-1500);
 		Rc.mot4 = rc->THROTTLE - (int)(gyro_pitch.output-1500) + (int)(gyro_roll.output-1500) + (int)(gyro_yaw.output-1500);
-		printf("if:\r\n");	
-		printf("%f   ,%f   ,%f   \r\n",gyro_pitch.output,gyro_roll.output,gyro_yaw.output);	
 	}
 	else
 	{
@@ -185,7 +177,6 @@ void Control_Gyro(struct _SI_float *gyro,struct _Rc *rc,uint8_t Lock)
 		Rc.mot3=0;
 		Rc.mot4=0;
 	}
-	printf("mot1:%d   ,mot2:%d   ,mot3:%d   ,mot4:%d   \r\n",Rc.mot1,Rc.mot2,Rc.mot3,Rc.mot4);
 	MOT_Control(Rc.mot1,Rc.mot2,Rc.mot3,Rc.mot4);
 }
 
@@ -215,9 +206,4 @@ void DataOutput_ToMOT(uint8_t rc_lock)
 	MOT_Control(Rc.mot1,Rc.mot2,Rc.mot3,Rc.mot4);
 
 }
-
-
-
-
-
 

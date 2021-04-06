@@ -18,18 +18,6 @@ void PWM_OC_Config(void);
 void PWM_Init(void);
 void MOT_Control(uint16_t ccr1,uint16_t ccr2,uint16_t ccr3,uint16_t ccr4);
 
-////加速按键KEY1 		PE3
-//#define MOT_PLUS_KEY_PORT			GPIOE
-//#define MOT_PLUS_KEY_PIN			GPIO_Pin_3
-////减速按键KEY0 		PE4
-//#define MOT_SUB_KEY_PORT			GPIOE
-//#define MOT_SUB_KEY_PIN				GPIO_Pin_4
-////刹车按键KEY_UP 	PA0
-//#define MOT_STOP_KEY_PORT			GPIOA
-//#define MOT_STOP_KEY_PIN			GPIO_Pin_0
 
-//static void NVIC_Config(void);
-//static void EXTI_Config(void);
-//void KEY_EXTI_Config(void);
 
 #endif /*__BSP_MOTOR_H*/

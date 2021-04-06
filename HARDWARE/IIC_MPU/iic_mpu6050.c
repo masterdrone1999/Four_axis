@@ -314,7 +314,6 @@ uint8_t MPU_Read_Len(uint8_t addr,uint8_t reg,uint8_t len,uint8_t *buf)
   */
 uint8_t MPU_Init(void)
 {
-//	uint8_t res;
 	GPIO_InitTypeDef GPIO_InitStructure;
 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO | RCC_APB2Periph_GPIOA,ENABLE);
@@ -328,26 +327,6 @@ uint8_t MPU_Init(void)
 	
 	MPU_AD0_CTRL = 0;//控制MPU6050的AD0为低电平，从机地址=0x68；
 					 //					 高电平，		  0x69；
-//	MPU_IIC_Init();
-//	MPU_Write_Byte(MPU_PWR_MGMT1_REG,0x80);//复位从机
-//	delay_ms(100);
-//	MPU_Write_Byte(MPU_PWR_MGMT1_REG,0x00);//唤醒从机
-//	MPU_Set_Gyro_Fsr(3);//陀螺仪传感器 +-2000dps
-//	MPU_Set_Accel_Fsr(0);//加速度传感器 +-2g
-//	MPU_Set_Rate(50);
-//	MPU_Write_Byte(MPU_INT_EN_REG,0x00);//关闭所有中断
-//	MPU_Write_Byte(MPU_USER_CTRL_REG,0x00);//IIC主模式关闭
-//	MPU_Write_Byte(MPU_FIFO_EN_REG,0x00);//关闭FIFO
-//	MPU_Write_Byte(MPU_INTBP_CFG_REG,0x80);//INT低电平有效
-//	res = MPU_Read_Byte(MPU_DEVICE_ID_REG);
-//	if(res == MPU_ADDR)
-//	{
-//		MPU_Write_Byte(MPU_PWR_MGMT1_REG,0x01);//设置CLKSEL PLL X轴为参考
-//		MPU_Write_Byte(MPU_PWR_MGMT2_REG,0x00);//加速度计和陀螺仪使能
-//		MPU_Set_Rate(50);
-//	}
-//	else
-//		return 1;
 	return 0;
 }
 /**  
