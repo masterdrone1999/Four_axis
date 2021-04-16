@@ -3,7 +3,7 @@
 ..\obj\heart.o: ..\SYSTEM\sys\sys.h
 ..\obj\heart.o: ..\USER\stm32f10x.h
 ..\obj\heart.o: ..\CORE\core_cm3.h
-..\obj\heart.o: E:\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\heart.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\heart.o: ..\USER\system_stm32f10x.h
 ..\obj\heart.o: ..\USER\stm32f10x_conf.h
 ..\obj\heart.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

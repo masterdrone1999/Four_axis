@@ -1,9 +1,9 @@
 ..\obj\inv_mpu.o: ..\HARDWARE\IIC_MPU\eMPL\inv_mpu.c
-..\obj\inv_mpu.o: E:\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\inv_mpu.o: E:\ARM\ARMCC\Bin\..\include\stdint.h
-..\obj\inv_mpu.o: E:\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\inv_mpu.o: E:\ARM\ARMCC\Bin\..\include\string.h
-..\obj\inv_mpu.o: E:\ARM\ARMCC\Bin\..\include\math.h
+..\obj\inv_mpu.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\inv_mpu.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\inv_mpu.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\inv_mpu.o: D:\keil\core\ARM\ARMCC\Bin\..\include\string.h
+..\obj\inv_mpu.o: D:\keil\core\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\inv_mpu.o: ..\HARDWARE\IIC_MPU\eMPL\inv_mpu.h
 ..\obj\inv_mpu.o: ..\USER\stm32f10x.h
 ..\obj\inv_mpu.o: ..\CORE\core_cm3.h

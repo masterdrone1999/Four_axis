@@ -3,7 +3,7 @@
 ..\obj\protocol.o: ..\SYSTEM\sys\sys.h
 ..\obj\protocol.o: ..\USER\stm32f10x.h
 ..\obj\protocol.o: ..\CORE\core_cm3.h
-..\obj\protocol.o: E:\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\protocol.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\protocol.o: ..\USER\system_stm32f10x.h
 ..\obj\protocol.o: ..\USER\stm32f10x_conf.h
 ..\obj\protocol.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -30,3 +30,4 @@
 ..\obj\protocol.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\obj\protocol.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\protocol.o: ..\STM32F10x_FWLib\inc\misc.h
+..\obj\protocol.o: ..\HARDWARE\STRUCT_ALL\Struct_all.h

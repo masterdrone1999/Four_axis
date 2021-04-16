@@ -3,7 +3,7 @@
 ..\obj\iic_mpu6050.o: ..\SYSTEM\sys\sys.h
 ..\obj\iic_mpu6050.o: ..\USER\stm32f10x.h
 ..\obj\iic_mpu6050.o: ..\CORE\core_cm3.h
-..\obj\iic_mpu6050.o: E:\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\iic_mpu6050.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\iic_mpu6050.o: ..\USER\system_stm32f10x.h
 ..\obj\iic_mpu6050.o: ..\USER\stm32f10x_conf.h
 ..\obj\iic_mpu6050.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -35,5 +35,5 @@
 ..\obj\iic_mpu6050.o: ..\HARDWARE\IIC_MPU\eMPL\inv_mpu_dmp_motion_driver.h
 ..\obj\iic_mpu6050.o: ..\HARDWARE\BEEP\beep.h
 ..\obj\iic_mpu6050.o: ..\SYSTEM\usart\usart.h
-..\obj\iic_mpu6050.o: E:\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\iic_mpu6050.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\iic_mpu6050.o: ..\SYSTEM\delay\delay.h

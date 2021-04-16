@@ -3,7 +3,7 @@
 ..\obj\struct_all.o: ..\SYSTEM\sys\sys.h
 ..\obj\struct_all.o: ..\USER\stm32f10x.h
 ..\obj\struct_all.o: ..\CORE\core_cm3.h
-..\obj\struct_all.o: E:\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\struct_all.o: D:\keil\core\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\struct_all.o: ..\USER\system_stm32f10x.h
 ..\obj\struct_all.o: ..\USER\stm32f10x_conf.h
 ..\obj\struct_all.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
