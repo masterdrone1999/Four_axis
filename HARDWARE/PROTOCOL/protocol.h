@@ -14,6 +14,7 @@ void usart1_report_rc(short thort,short yaw,short roll,short pitch,short aux1,sh
 //遥控数据最小在1000左右，最大在2000左右,其中pwm范围1-100,voltage为实际值*100。
 void usart1_report_offset(short acc_x,short acc_y,short acc_z,short gyro_x,short gyro_y,short gyro_z);
 
+void Report_FlyCtrl(uint8_t rep);
 
 
 #endif /*__PROTOCOL_H*/

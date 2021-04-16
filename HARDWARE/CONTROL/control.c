@@ -186,24 +186,24 @@ void Control_Gyro(struct _SI_float *gyro,struct _Rc *rc,uint8_t Lock)
   *  入口参数：
   *  返回值：
   */
-void DataOutput_ToMOT(uint8_t rc_lock)
-{		
+//void DataOutput_ToMOT(uint8_t rc_lock)
+//{		
 
-	if(rc_lock == 0)//已解锁
-	{
-		Rc.mot1 = Rc.THROTTLE+((int)Rc.ROLL-1500)-((int)Rc.PITCH-1500)-((int)Rc.YAW-1500);
-		Rc.mot2 = Rc.THROTTLE-((int)Rc.ROLL-1500)-((int)Rc.PITCH-1500)+((int)Rc.YAW-1500);
-		Rc.mot3 = Rc.THROTTLE+((int)Rc.ROLL-1500)+((int)Rc.PITCH-1500)+((int)Rc.YAW-1500);
-		Rc.mot4 = Rc.THROTTLE-((int)Rc.ROLL-1500)+((int)Rc.PITCH-1500)-((int)Rc.YAW-1500);
-	}
-	else	
-	{
-		Rc.mot1=0;
-		Rc.mot2=0;
-		Rc.mot3=0;
-		Rc.mot4=0;
-	}
-	MOT_Control(Rc.mot1,Rc.mot2,Rc.mot3,Rc.mot4);
+//	if(rc_lock == 0)//已解锁
+//	{
+//		Rc.mot1 = Rc.THROTTLE+((int)Rc.ROLL-1500)-((int)Rc.PITCH-1500)-((int)Rc.YAW-1500);
+//		Rc.mot2 = Rc.THROTTLE-((int)Rc.ROLL-1500)-((int)Rc.PITCH-1500)+((int)Rc.YAW-1500);
+//		Rc.mot3 = Rc.THROTTLE+((int)Rc.ROLL-1500)+((int)Rc.PITCH-1500)+((int)Rc.YAW-1500);
+//		Rc.mot4 = Rc.THROTTLE-((int)Rc.ROLL-1500)+((int)Rc.PITCH-1500)-((int)Rc.YAW-1500);
+//	}
+//	else	
+//	{
+//		Rc.mot1=0;
+//		Rc.mot2=0;
+//		Rc.mot3=0;
+//		Rc.mot4=0;
+//	}
+//	MOT_Control(Rc.mot1,Rc.mot2,Rc.mot3,Rc.mot4);
 
-}
+//}
 

@@ -43,10 +43,6 @@ int main(void)
 		{
 			Count_1ms=0;			
 			MPU_GetData();
-			if(report==1)//发送数据给上位机
-			{
-				usart1_report_imu(acc.x,acc.y,acc.z,gyro.x,gyro.y,gyro.z,(int)(out_angle.roll*100),(int)(out_angle.pitch*100),(int)(out_angle.yaw*10));
-			}			
 		}
 		
 		/*500Hz任务*/
@@ -63,27 +59,22 @@ int main(void)
 //			Control_Angle(&out_angle,&Rc);//外环控制
 		}
 		
-		/*20Hz遥控器接收PPM信号*/	
+		/*20Hz任务*/	
 		if(Count_25ms>=25)
 		{	
 			Count_25ms=0;					
-			PPM_DataArrange(PPM_Databuf);//PPM数据整理 存储在 Rc结构体 中
-//			DataOutput_ToMOT(Rc_LOCK);
-			if(report==1)//发送数据给上位机
-			{				
-//				usart1_report_pid(u16 rol_p,u16 rol_i,u16 rol_d,u16 pit_p,u16 pit_i,u16 pit_d,u16 yaw_p,u16 yaw_i,u16 yaw_d);
-//				usart1_report_rc(Rc.THROTTLE,Rc.YAW,Rc.ROLL,Rc.PITCH,Rc.AUX1,Rc.AUX2,Rc.AUX3,Rc.AUX4,0,(int)((Rc.mot1-1000)/10),(int)((Rc.mot2-1000)/10),(int)((Rc.mot3-1000)/10),(int)((Rc.mot4-1000)/10),0);
-			}
+			PPM_DataArrange(PPM_Databuf);//遥控器接收PPM信号，PPM数据整理，存储在 Rc结构体 中
+			Report_FlyCtrl(report);//向上位机汇报
 			
+//			DataOutput_ToMOT(Rc_LOCK);		
 		}
 		
-		/*4Hz任务*/
-		if(Count_LED>=250)
+		/*5Hz任务*/
+		if(Count_LED>=200)
 		{
 			Count_LED=0;
 //			Get_Distance();//测距模块						
-			LED1=!LED1;//绿灯闪烁，程序正常运行
-			
+			LED1=!LED1;//绿灯闪烁，程序正常运行			
 		}		
 	}	 
 }
