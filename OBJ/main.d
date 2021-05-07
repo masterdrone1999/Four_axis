@@ -43,3 +43,4 @@
 ..\obj\main.o: ..\HARDWARE\IIC_MPU\eMPL\inv_mpu.h
 ..\obj\main.o: ..\HARDWARE\IIC_MPU\eMPL\inv_mpu_dmp_motion_driver.h
 ..\obj\main.o: ..\HARDWARE\PROTOCOL\protocol.h
+..\obj\main.o: ..\HARDWARE\HCSR04\hcsr04.h

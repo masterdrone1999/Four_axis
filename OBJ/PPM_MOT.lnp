@@ -13,6 +13,7 @@
 "..\obj\inv_mpu_dmp_motion_driver.o"
 "..\obj\protocol.o"
 "..\obj\iic_mpu6050.o"
+"..\obj\hcsr04.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"

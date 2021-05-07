@@ -16,6 +16,7 @@
 #include "inv_mpu_dmp_motion_driver.h" 
 #include "protocol.h"
 
+#include "hcsr04.h"
 
 /**  
   *  功能：
@@ -30,6 +31,7 @@ int main(void)
 	uart_init(5000000);	 
  	LED_Init();
 	BEEP_Init();  
+	hcsr04_Init();
 	PPM_Init();
 	PWM_Init();
 	MPU6050_Init();
@@ -65,14 +67,15 @@ int main(void)
 			Count_25ms=0;					
 			PPM_DataArrange(PPM_Databuf);//遥控器接收PPM信号，PPM数据整理，存储在 Rc结构体 中
 			Lock_Rep_Ctrl();//判断Rc_LOCK和report
-			Report_FlyCtrl(report);//向上位机汇报			
+			if(report==0)
+				Report_FlyCtrl();//向上位机汇报			
 		}
 		
 		/*5Hz任务*/
 		if(Count_LED>=200)
 		{
 			Count_LED=0;
-//			Get_Distance();//测距模块						
+			Get_Distance();//测距模块						
 			LED1=!LED1;//绿灯闪烁，程序正常运行			
 		}		
 	}	 

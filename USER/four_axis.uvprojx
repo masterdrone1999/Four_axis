@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\EXTI;..\HARDWARE\BEEP;..\HARDWARE\HEART;..\HARDWARE\RC;..\HARDWARE\BSP_MOTOR_TIM4;..\HARDWARE\CONTROL;..\HARDWARE\STRUCT_ALL;..\HARDWARE\PROTOCOL;..\HARDWARE\IIC_MPU;..\HARDWARE\IIC_MPU\eMPL</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\EXTI;..\HARDWARE\BEEP;..\HARDWARE\HEART;..\HARDWARE\RC;..\HARDWARE\BSP_MOTOR_TIM4;..\HARDWARE\CONTROL;..\HARDWARE\STRUCT_ALL;..\HARDWARE\PROTOCOL;..\HARDWARE\IIC_MPU;..\HARDWARE\IIC_MPU\eMPL;..\HARDWARE\HCSR04</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -456,6 +456,11 @@
               <FileName>iic_mpu6050.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\IIC_MPU\iic_mpu6050.c</FilePath>
+            </File>
+            <File>
+              <FileName>hcsr04.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\HCSR04\hcsr04.c</FilePath>
             </File>
           </Files>
         </Group>
