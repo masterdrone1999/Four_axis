@@ -227,7 +227,7 @@ void usart1_report_offset(short acc_x,short acc_y,short acc_z,short gyro_x,short
 
 void Report_FlyCtrl(uint8_t rep)
 {
-	if(rep==1)//发送数据给上位机
+	if(rep==0)//发送数据给上位机
 	{			
 		usart1_report_imu(acc.x,acc.y,acc.z,gyro.x,gyro.y,gyro.z,(int)(out_angle.roll*100),(int)(out_angle.pitch*100),(int)(out_angle.yaw*10));	
 //		usart1_report_pid(u16 rol_p,u16 rol_i,u16 rol_d,u16 pit_p,u16 pit_i,u16 pit_d,u16 yaw_p,u16 yaw_i,u16 yaw_d);

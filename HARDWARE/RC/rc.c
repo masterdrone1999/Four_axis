@@ -1,4 +1,4 @@
-#include "Rc.h"
+#include "rc.h"
 #include "led.h"
 #include "usart.h"
 #include "Struct_all.h"
@@ -65,7 +65,7 @@ uint16_t PPM_Okay=0;
 uint16_t PPM_Databuf[8]={0};
 uint8_t TIM2_CH2_CAPTURE_STA=0;
 /**  
-  *  功能：TIM2_ch1中断服务函数，接收PPM信号储存在PPM_Databuf中
+  *  功能：TIM2_CH1中断服务函数，接收PPM信号储存在PPM_Databuf中
   *  入口参数：
   *  返回值：
   */
@@ -102,17 +102,33 @@ void TIM2_IRQHandler(void)
 			}        
 	}
 	
-	TIM_ClearITPendingBit(TIM2, TIM_IT_CC2|TIM_IT_Update); //清除中断标志位，一定不要忘，要不然下次进不了中断    
+	TIM_ClearITPendingBit(TIM2, TIM_IT_CC2|TIM_IT_Update); //清除中断标志位
 }
 
+/**  
+  *  功能：将从RC来的PPM信号数据进行限幅处理
+  *  入口参数：PPM_Databuf[]
+  *  返回值：
+  */
+static void PPM_Limit(uint16_t *data)
+{
+	for(int i=0;i<8;i++)
+	{
+		data[i] = (data[i]<=1000)?1000:data[i];
+		data[i] = (data[i]>=2000)?2000:data[i];
+	}
+}
 
 /**  
   *  功能：将从RC来的PPM信号数据写入对应Rc结构体
-  *  入口参数：
+  *  入口参数：PPM_Databuf[]
   *  返回值：
   */
 void PPM_DataArrange(uint16_t *data)
 {
+	//限幅处理
+	PPM_Limit(data);
+	
 	Rc.ROLL = data[4];
 	Rc.PITCH = data[0];
 	Rc.THROTTLE = data[5];
@@ -123,4 +139,14 @@ void PPM_DataArrange(uint16_t *data)
 	Rc.AUX4 = data[3];
 }
 
-
+void Lock_Rep_Ctrl(void)
+{
+	if(Rc.AUX1>1500)
+		Rc_LOCK=0;
+	else
+		Rc_LOCK=1;
+	if(Rc.AUX2>1500)
+		report=0;
+	else
+		report=1;
+}

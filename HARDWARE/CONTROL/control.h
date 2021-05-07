@@ -4,10 +4,11 @@
 #include "sys.h"
 #include "Struct_all.h"
 
+static uint16_t MOT_Compute(uint16_t THROTTLE,int p,int r,int y);
+void PID_Control(struct _pid *PID,uint16_t target,float measure,float max,float Integral_max);
+void Control_Gyro(uint8_t Lock);//内环
+void Control_Angle(void);//外环
 
-void Control_Gyro(struct _SI_float *gyro,struct _Rc *rc,uint8_t Lock);//内环
-void Control_Angle(struct _out_angle *angle,struct _Rc *rc);//外环
-//void DataOutput_ToMOT(uint8_t rc_lock);
 
 
 

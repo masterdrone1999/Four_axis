@@ -49,14 +49,14 @@ int main(void)
 		if(Count_2ms>=2)
 		{
 			Count_2ms=0;			
-			Control_Gyro(&SI_gyro,&Rc,Rc_LOCK);//内环控制
+			Control_Gyro(Rc_LOCK);//内环控制
 		}
 		
 		/*250Hz任务*/
 		if(Count_4ms>=4)
 		{
 			Count_4ms=0;			
-//			Control_Angle(&out_angle,&Rc);//外环控制
+			Control_Angle();//外环控制
 		}
 		
 		/*20Hz任务*/	
@@ -64,9 +64,8 @@ int main(void)
 		{	
 			Count_25ms=0;					
 			PPM_DataArrange(PPM_Databuf);//遥控器接收PPM信号，PPM数据整理，存储在 Rc结构体 中
-			Report_FlyCtrl(report);//向上位机汇报
-			
-//			DataOutput_ToMOT(Rc_LOCK);		
+			Lock_Rep_Ctrl();//判断Rc_LOCK和report
+			Report_FlyCtrl(report);//向上位机汇报			
 		}
 		
 		/*5Hz任务*/

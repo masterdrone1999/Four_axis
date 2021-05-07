@@ -1,5 +1,5 @@
 ..\obj\rc.o: ..\HARDWARE\RC\rc.c
-..\obj\rc.o: ..\HARDWARE\RC\Rc.h
+..\obj\rc.o: ..\HARDWARE\RC\rc.h
 ..\obj\rc.o: ..\SYSTEM\sys\sys.h
 ..\obj\rc.o: ..\USER\stm32f10x.h
 ..\obj\rc.o: ..\CORE\core_cm3.h

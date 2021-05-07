@@ -7,7 +7,7 @@
 							全局变量声明
 *******************************************************************************/ 
 extern uint8_t Rc_LOCK;//电机锁，0解锁；1上锁
-extern uint8_t report;//开启上传数据到上位机,0,关闭；1开启
+extern uint8_t report;//开启上传数据到上位机,0,开启；1,关闭
 
 #define Radian_to_Angle	   57.2957795f
 #define RawData_to_Angle	0.0610351f	//以下参数对应2000度每秒
@@ -83,13 +83,16 @@ struct _pid
 	float kp;
 	float ki;
 	float kd;
-	float integral;
 	
-	float output;
+	float Integral;
+	float Error;
+	float PreError;
+	float Deriv;
+	float Output;
 };
-extern struct _pid pitch;
-extern struct _pid roll;
-extern struct _pid yaw;
+extern struct _pid acc_pitch;
+extern struct _pid acc_roll;
+extern struct _pid acc_yaw;
 extern struct _pid gyro_pitch;
 extern struct _pid gyro_roll;
 extern struct _pid gyro_yaw;
