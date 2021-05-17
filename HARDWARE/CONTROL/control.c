@@ -31,7 +31,8 @@ void PID_Control(struct _pid *PID,uint16_t target,float measure,float max,float 
 	if(PID->Error < -max)
 		PID->Integral += -max;
 	else
-		PID->Integral += PID->Error;	
+		PID->Integral += PID->Error;
+	
 	if(PID->Integral > Integral_max)
 	   PID->Integral = Integral_max;
 	if(PID->Integral < -Integral_max)
@@ -83,22 +84,22 @@ void Control_Gyro(uint8_t Lock)
 	PID_Control(&gyro_roll,	 acc_roll.Output,  (SI_gyro.y*Radian_to_Angle), gyro_max, gyro_integral_max);
 	PID_Control(&gyro_yaw,	 acc_yaw.Output,   (SI_gyro.z*Radian_to_Angle), gyro_max, gyro_integral_max);
 	
-	if(Lock==0)
+	if((Rc.THROTTLE>1100)&&(0 == Lock))
 	{
-		Rc.mot1 = MOT_Compute(Rc.THROTTLE,1,1,-1);
-		Rc.mot2 = MOT_Compute(Rc.THROTTLE,1,-1,1);
-		Rc.mot3 = MOT_Compute(Rc.THROTTLE,-1,-1,-1);
-		Rc.mot4 = MOT_Compute(Rc.THROTTLE,-1,1,1);
+		MOT_Speed[0] = MOT_Compute(Rc.THROTTLE,1,1,-1);
+		MOT_Speed[1] = MOT_Compute(Rc.THROTTLE,1,-1,1);
+		MOT_Speed[2] = MOT_Compute(Rc.THROTTLE,-1,-1,-1);
+		MOT_Speed[3] = MOT_Compute(Rc.THROTTLE,-1,1,1);
 				
 	}
 	else
 	{
-		Rc.mot1=0;
-		Rc.mot2=0;
-		Rc.mot3=0;
-		Rc.mot4=0;
+		MOT_Speed[0] = 1100;
+		MOT_Speed[1] = 1100;
+		MOT_Speed[2] = 1100;
+		MOT_Speed[3] = 1100;
 	}
-	MOT_Control(Rc.mot1,Rc.mot2,Rc.mot3,Rc.mot4);
+	MOT_Control(MOT_Speed[0],MOT_Speed[1],MOT_Speed[2],MOT_Speed[3]);
 }
 
 

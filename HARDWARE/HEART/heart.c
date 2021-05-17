@@ -41,7 +41,7 @@ void HEART_Init(void)
 extern uint8_t Count_1ms=0;//1000Hz计时
 extern uint8_t Count_2ms=0;//500Hz计时
 extern uint8_t Count_4ms=0;//250Hz计时
-extern uint8_t Count_25ms=0;//20Hz计时
+extern uint8_t Count_50ms=0;//20Hz计时
 extern uint16_t Count_LED=0;//飞行器警示灯
 
 void TIM7_IRQHandler(void)
@@ -51,7 +51,7 @@ void TIM7_IRQHandler(void)
 		Count_1ms++;
 		Count_2ms++;
 		Count_4ms++;
-		Count_25ms++;
+		Count_50ms++;
 		Count_LED++;		
 	}
 	TIM_ClearITPendingBit(TIM7, TIM_IT_Update);  //清除TIM7更新中断标志 

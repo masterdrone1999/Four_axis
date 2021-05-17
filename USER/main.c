@@ -62,12 +62,12 @@ int main(void)
 		}
 		
 		/*20Hz任务*/	
-		if(Count_25ms>=25)
+		if(Count_50ms>=50)
 		{	
-			Count_25ms=0;					
+			Count_50ms=0;					
 			PPM_DataArrange(PPM_Databuf);//遥控器接收PPM信号，PPM数据整理，存储在 Rc结构体 中
 			Lock_Rep_Ctrl();//判断Rc_LOCK和report
-			if(report==0)
+			if(0 == report)
 				Report_FlyCtrl();//向上位机汇报			
 		}
 		

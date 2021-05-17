@@ -28,7 +28,7 @@ void MPU6050_Init(void)
   */
 void MPU_GetData(void)
 {
-	if(mpu_dmp_get_data()==0)
+	if(0 == mpu_dmp_get_data())
 	{	
 		Get_Radian(&gyro,&SI_gyro);
 	}

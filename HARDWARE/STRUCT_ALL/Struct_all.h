@@ -8,6 +8,7 @@
 *******************************************************************************/ 
 extern uint8_t Rc_LOCK;//电机锁，0解锁；1上锁
 extern uint8_t report;//开启上传数据到上位机,0,开启；1,关闭
+extern uint16_t MOT_Speed[4];//PWM量
 
 #define Radian_to_Angle	   57.2957795f
 #define RawData_to_Angle	0.0610351f	//以下参数对应2000度每秒
@@ -68,12 +69,7 @@ struct _Rc
 	uint16_t AUX1;		//辅助通道1
 	uint16_t AUX2;		//辅助通道2
 	uint16_t AUX3;		//辅助通道3
-	uint16_t AUX4;		//辅助通道4
-	
-	uint16_t mot1;
-	uint16_t mot2;
-	uint16_t mot3;
-	uint16_t mot4;
+	uint16_t AUX4;		//辅助通道4	
 };
 extern struct _Rc Rc;
 

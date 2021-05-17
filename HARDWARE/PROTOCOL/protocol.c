@@ -157,6 +157,11 @@ void usart1_report_rc(short thort,short yaw,short roll,short pitch,
 {
 	uint8_t buf[28]={0x00};
 	
+	pwm1=(int)((pwm1-1000)/10);
+	pwm2=(int)((pwm2-1000)/10);
+	pwm3=(int)((pwm3-1000)/10);
+	pwm4=(int)((pwm4-1000)/10);
+	
 	//THROT YAW ROLL PITCH	
 	buf[0]=(thort>>8)&0xFF;//
 	buf[1]=thort&0xFF;//
@@ -229,5 +234,5 @@ void Report_FlyCtrl(void)
 {			
 	usart1_report_imu(acc.x,acc.y,acc.z,gyro.x,gyro.y,gyro.z,(int)(out_angle.roll*100),(int)(out_angle.pitch*100),(int)(out_angle.yaw*10));	
 	usart1_report_pid(gyro_roll.kp,gyro_roll.ki,gyro_roll.kd,gyro_pitch.kp,gyro_pitch.ki,gyro_pitch.kd,gyro_pitch.kp,gyro_pitch.ki,gyro_pitch.kd);
-	usart1_report_rc(Rc.THROTTLE,Rc.YAW,Rc.ROLL,Rc.PITCH,Rc.AUX1,Rc.AUX2,Rc.AUX3,Rc.AUX4,0,(int)((Rc.mot1-1000)/10),(int)((Rc.mot2-1000)/10),(int)((Rc.mot3-1000)/10),(int)((Rc.mot4-1000)/10),0);
+	usart1_report_rc(Rc.THROTTLE,Rc.YAW,Rc.ROLL,Rc.PITCH,Rc.AUX1,Rc.AUX2,Rc.AUX3,Rc.AUX4,0,MOT_Speed[0],MOT_Speed[1],MOT_Speed[2],MOT_Speed[3],0);
 }

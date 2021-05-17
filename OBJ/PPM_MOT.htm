@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\PPM_MOT.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\PPM_MOT.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri May 07 11:17:40 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon May 17 20:23:44 2021
 <BR><P>
 <H3>Maximum Stack Usage =        304 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -466,7 +466,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6e]"></a>Control_Gyro</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, control.o(.text))
+<P><STRONG><a name="[6e]"></a>Control_Gyro</STRONG> (Thumb, 240 bytes, Stack size 24 bytes, control.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Control_Gyro &rArr; PID_Control &rArr; __aeabi_fmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_Control
@@ -1148,7 +1148,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Report_FlyCtrl
 </UL>
 
-<P><STRONG><a name="[fb]"></a>usart1_report_rc</STRONG> (Thumb, 254 bytes, Stack size 64 bytes, protocol.o(.text))
+<P><STRONG><a name="[fb]"></a>usart1_report_rc</STRONG> (Thumb, 304 bytes, Stack size 64 bytes, protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = usart1_report_rc &rArr; usart1_niming_report &rArr; usart1_send_char
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usart1_niming_report
@@ -1157,12 +1157,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Report_FlyCtrl
 </UL>
 
-<P><STRONG><a name="[fc]"></a>usart1_report_offset</STRONG> (Thumb, 132 bytes, Stack size 56 bytes, protocol.o(.text), UNUSED)
+<P><STRONG><a name="[fc]"></a>usart1_report_offset</STRONG> (Thumb, 134 bytes, Stack size 56 bytes, protocol.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usart1_niming_report
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 
-<P><STRONG><a name="[72]"></a>Report_FlyCtrl</STRONG> (Thumb, 388 bytes, Stack size 80 bytes, protocol.o(.text))
+<P><STRONG><a name="[72]"></a>Report_FlyCtrl</STRONG> (Thumb, 330 bytes, Stack size 80 bytes, protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = Report_FlyCtrl &rArr; usart1_report_rc &rArr; usart1_niming_report &rArr; usart1_send_char
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usart1_report_rc

@@ -64,13 +64,13 @@ u8  TIM3CH1_CAPTURE_STA=0;	//输入捕获状态
 u16	TIM3CH1_CAPTURE_VAL;	//输入捕获值
 void TIM3_IRQHandler(void)
 {
-	if((TIM3CH1_CAPTURE_STA & 0x80) == 0)//未捕获成功
+	if(0 == (TIM3CH1_CAPTURE_STA & 0x80))//未捕获成功
 	{
 		if(TIM_GetITStatus(TIM3,TIM_IT_Update) != RESET) //再次检测是否有中断
 		{	
 			if(TIM3CH1_CAPTURE_STA & 0x40)//已经捕获到高电平
 			{
-				if((TIM3CH1_CAPTURE_STA & 0x3F) == 0x3F )//到达计时最大值，不能再进行计数；所有数据附上最大值
+				if(0x3F == (TIM3CH1_CAPTURE_STA & 0x3F))//到达计时最大值，不能再进行计数；所有数据附上最大值
 				{	
 					TIM3CH1_CAPTURE_STA |= 0x80;//将捕获状态位（bit8）设为1，标记成功捕获
 					TIM3CH1_CAPTURE_VAL = 0xFFFF;

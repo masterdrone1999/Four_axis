@@ -2,6 +2,7 @@
 
 uint8_t Rc_LOCK=1;//电机锁，0解锁；1上锁
 uint8_t report=1;//开启上传数据到上位机,0,关闭；1开启
+uint16_t MOT_Speed[4]={0};//PWM量
 
 struct _acc  acc;			//原始数据
 struct _gyro gyro;
